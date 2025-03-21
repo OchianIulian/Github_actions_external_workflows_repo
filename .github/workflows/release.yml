@@ -1,0 +1,13 @@
+name: Release
+run-name: Release ${{ inputs.ring }}
+on:
+  workflow_dispatch:
+
+
+jobs:
+  drain-restore:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.ring }}
+    steps:
+      - run: echo "Release started"
+      - run: echo "You are in release branch"
