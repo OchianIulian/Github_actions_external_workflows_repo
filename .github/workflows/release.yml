@@ -1,13 +1,10 @@
 name: Release
-run-name: Release ${{ inputs.ring }}
+run-name: Release
 on:
   workflow_dispatch:
 
 
 jobs:
   drain-restore:
-    runs-on: ubuntu-latest
-    environment: ${{ inputs.ring }}
-    steps:
-      - run: echo "Release started"
-      - run: echo "You are in release branch"
+    uses: "OchianIulian/github_actions_test_repo/.github/workflows/long-pipeline.yml@main"
+
